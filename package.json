@@ -1,0 +1,18 @@
+{
+  "name": "hacker-app",
+  "version": "1.0.0",
+  "description": "tech test app",
+  "main": "index.js",
+  "dependencies": {
+    "karma": "^2.0.0"
+  },
+  "devDependencies": {
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.2"
+  },
+  "scripts": {
+    "test": "karma start"
+  },
+  "author": "doug chamberlain",
+  "license": "ISC"
+}
