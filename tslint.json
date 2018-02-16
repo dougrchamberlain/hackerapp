@@ -20,7 +20,8 @@
             true,
             "always"
         ],
-        "space-within-parens": true
+        "space-within-parens": true,
+        "no-var-requires": false
     },
     "rulesDirectory": []
 }

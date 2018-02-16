@@ -3,14 +3,24 @@
   "version": "1.0.0",
   "description": "tech test app",
   "main": "src/index.ts",
-  "dependencies": {},
+  "dependencies": {
+    "@uirouter/angularjs": "^1.0.15",
+    "angular": "^1.6.9",
+    "angular-resource": "^1.6.9"
+  },
   "devDependencies": {
+    "@types/angular": "^1.6.43",
+    "@types/angular-mocks": "^1.5.11",
+    "@types/angular-resource": "^1.5.14",
     "@types/chai": "^4.1.2",
     "@types/mocha": "^2.2.48",
+    "@types/node": "^9.4.6",
+    "angular-mocks": "^1.6.9",
     "chai": "^4.1.2",
     "clean-webpack-plugin": "^0.1.18",
     "eslint": "^4.17.0",
     "eslint-config-google": "^0.9.1",
+    "html-loader": "^0.5.5",
     "html-webpack-plugin": "^2.30.1",
     "karma": "^2.0.0",
     "karma-chai": "^0.1.0",
@@ -31,7 +41,7 @@
   },
   "scripts": {
     "test": "karma start",
-    "start": "webpack-dev-server --open"
+    "start": "webpack-dev-server"
   },
   "author": "doug chamberlain",
   "license": "ISC"

@@ -1,4 +1,7 @@
 module.exports = {
+    "globals": {
+        "require": true
+    },
     "env": {
         "browser": true,
         "commonjs": true,
