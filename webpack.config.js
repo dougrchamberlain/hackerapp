@@ -6,14 +6,15 @@ module.exports = {
     entry: { app: './src/index.ts' },
     devtool: 'eval-source-map',
     devServer: {
-        contentBase: './dist'
+        contentBase: './dist',
+        hot: true
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Hacker App',
             template: './index.html'
-        }),
+        })
 
     ],
     module: {
@@ -30,7 +31,10 @@ module.exports = {
         ]
     },
     resolve: {
-        extensions: ['.tsx', '.ts', '.js']
+        extensions: ['.tsx', '.ts', '.js'],
+        alias: {
+            '@': path.resolve('src')
+        }
     },
     output: {
         filename: '[name].bundle.js',

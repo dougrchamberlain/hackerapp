@@ -1,12 +1,14 @@
+var webpackConfig = require('./webpack.config');
 // Karma configuration
 // Generated on Fri Feb 16 2018 13:08:34 GMT-0500 (Eastern Standard Time)
 
 module.exports = function (config) {
     config.set({
-        mime: { 'text/x-typescript': ['ts', 'tsx'] }, //for some reasone ts files are interpreted wrong.
+        //mime: { 'text/x-typescript': ['ts', 'tsx'] }, //for some reasone ts files are interpreted wrong.
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
+        exclude: ['node_modules'],
 
 
         // frameworks to use
@@ -14,21 +16,15 @@ module.exports = function (config) {
         frameworks: ['mocha', 'chai'], //sinon
 
 
-        // list of files / patterns to load in the browser
         files: [
-            'src/**/*.spec.ts'
+            // only specify one entry point
+            // and require all tests in there
+            'tests/**/*.spec.ts'
         ],
 
-
-        // list of files / patterns to exclude
-        exclude: [
-        ],
-
-
-        // preprocess matching files before serving them to the browser
-        // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
         preprocessors: {
-            'src/**/*.ts': ['webpack']
+            // add webpack as preprocessor
+            'tests/**/*.spec.ts': ['webpack']
         },
 
 
@@ -66,7 +62,12 @@ module.exports = function (config) {
 
         // Concurrency level
         // how many browser should be started simultaneous
-        concurrency: Infinity
+        concurrency: Infinity,
+
+        webpack: {
+            resolve: webpackConfig.resolve,
+            module: webpackConfig.module
+        }
 
     });
 };

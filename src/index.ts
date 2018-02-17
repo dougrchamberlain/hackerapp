@@ -5,3 +5,4 @@ export default angular.module('App', [])
     .component('bestStories', BestStories)
     .component('dumb', { template: '<div>dumb</div>' })
     .name;
+
