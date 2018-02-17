@@ -1,8 +1,8 @@
+const template = require('./list.html');
 import Controller from './controller';
-const template = require('./views/list.html');
 
 export default {
     bindings: {},
     controller: Controller,
-    template,
+    template
 };

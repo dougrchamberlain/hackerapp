@@ -6,8 +6,7 @@ module.exports = {
     entry: { app: './src/index.ts' },
     devtool: 'eval-source-map',
     devServer: {
-        contentBase: './dist',
-        hot: true
+        contentBase: './dist'
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),

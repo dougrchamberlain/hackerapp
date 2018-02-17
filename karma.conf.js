@@ -44,7 +44,7 @@ module.exports = function (config) {
 
         // level of logging
         // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
-        logLevel: config.LOG_WARN,
+        logLevel: config.LOG_DISABLE,
 
 
         // enable / disable watching file and executing tests whenever any file changes
@@ -66,7 +66,13 @@ module.exports = function (config) {
 
         webpack: {
             resolve: webpackConfig.resolve,
-            module: webpackConfig.module
+            module: webpackConfig.module,
+            stats: false
+        },
+        webpackMiddleware: {
+            // webpack-dev-middleware configuration
+            // i. e.
+            stats: 'errors-only'
         }
 
     });
