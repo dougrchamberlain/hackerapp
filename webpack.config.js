@@ -12,7 +12,7 @@ module.exports = {
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'Hacker App',
-            template: './index.html'
+            template: './index.ejs'
         })
 
     ],
@@ -26,6 +26,31 @@ module.exports = {
                 test: /\.html$/,
                 use: 'html-loader',
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            },
+            {
+                test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, use: [
+                    'file-loader'
+                ]
+            },
+            {
+                test: /\.(woff|woff2)$/, use: [
+                    'url-loader?prefix=font/&limit=5000'
+                ]
+            },
+            {
+                test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/,
+                use: ['url-loader?limit=10000&mimetype=application/octet-stream']
+            },
+            {
+                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
+                use: ['url-loader?limit=10000&mimetype=application/octet-stream']
             }
         ]
     },
