@@ -1,5 +1,9 @@
-<div>
-    <p> {{$ctrl.storyItem.title}}</p>
-    <p> {{$ctrl.storyItem.by}}</p>
-    <button class="btn btn-primary">hello</button>
-</div>
+<md-list-item class="md-2-line">
+    <div class="md-list-item-text" layout="column" ng-if="$ctrl.story.title">
+        <h3>{{$ctrl.story.title}}</h3>
+        <p>{{$ctrl.story.by}}</p>
+    </div>
+    <md-content ng-if="!$ctrl.story.title">
+        poop
+    </md-content>
+</md-list-item>

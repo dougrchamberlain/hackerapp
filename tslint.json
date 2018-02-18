@@ -23,7 +23,8 @@
         "space-within-parens": true,
         "no-var-requires": false,
         "trailing-comma": false,
-        "max-classes-per-file": false
+        "max-classes-per-file": false,
+        "ordered-imports": false
     },
     "rulesDirectory": []
 }

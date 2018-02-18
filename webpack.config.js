@@ -49,8 +49,10 @@ module.exports = {
                 use: ['url-loader?limit=10000&mimetype=application/octet-stream']
             },
             {
-                test: /\.svg(\?v=\d+\.\d+\.\d+)?$/,
-                use: ['url-loader?limit=10000&mimetype=application/octet-stream']
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [
+                    'file-loader'
+                ]
             }
         ]
     },

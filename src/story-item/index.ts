@@ -2,7 +2,7 @@ import Controller from './controller';
 const template = require('./story-item.html');
 
 export default {
-    bindings: { storyId: '=' },
+    bindings: { story: '=' },
     controller: Controller,
     template
 };

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="App">
+<html ng-app="App" ng-cloak>
 
 <head>
     <title>
@@ -11,27 +11,36 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body ng-cloak layout="column">
-
+<body layout="column" ng-controller="appController as $ctrl">
     <!-- Container #1 (see wireframe) -->
     <md-toolbar layout="row" class="md-toolbar-tools">
-        <h1>Hacker News</h1>
+        <h2 md-truncate flex>Hacker News App</h2>
+        <span flex></span>
+        <md-icon md-font-icon="search">search</md-icon>
+        <md-input-container>
+            <input type="text" ng-model="$ctrl.search">
+        </md-input-container>
+
+
+
 
     </md-toolbar>
 
     <!-- Container #2 -->
     <div flex layout="row">
 
-        <!-- Container #3 -->
-        <md-sidenav md-is-locked-open="true" class="md-whiteframe-4dp">
-            Sidenav
-        </md-sidenav>
 
         <!-- Container #4 -->
         <md-content flex id="content">
-            Content
+            <!-- User details sample -->
+            <md-list ng-repeat="story in $ctrl.stories  | filter:$ctrl.search">
+                <md-list-item>
+                    <story-item story="story"></story-item>
+                </md-list-item>
+            </md-list>
         </md-content>
 
     </div>
