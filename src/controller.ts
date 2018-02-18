@@ -20,6 +20,7 @@ export default class AppController {
 
     constructor(private $resource: ng.resource.IResourceService, private $timeout: ng.ITimeoutService) {
         console.log('constructor');
+
     }
 
     public $onInit() {
