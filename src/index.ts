@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 import * as ngResource from 'angular-resource';
-import uiRouter from '@uirouter/angularjs';
+import uiRouter, { StateProvider } from '@uirouter/angularjs';
 import 'angular-animate';
 import 'angular-aria';
 import * as ngMaterial from 'angular-material';
@@ -14,7 +14,8 @@ import appController from './controller';
 export default angular.module('App', [ngResource, ngMaterial, uiRouter])
     .component('storyItem', StoryItem)
     .controller('appController', appController)
-    .config(($stateProvider: any) => {
-        // add more states here.
+    .config(($stateProvider: StateProvider, $mdThemingProvider: angular.material.IThemingProvider) => {
+        $mdThemingProvider.theme('docs-dark', 'default')
+        .primaryPalette('blue').dark();
     })
     .name;

@@ -18,7 +18,8 @@ export default class AppController {
 
     private resource: ng.resource.IResourceClass<StoryItem> = this.$resource<StoryItem>(this.bestStoryURL);
 
-    constructor(private $resource: ng.resource.IResourceService, private $timeout: ng.ITimeoutService) {
+    constructor(private $resource: ng.resource.IResourceService,
+                private $timeout: ng.ITimeoutService) {
 
 
     }

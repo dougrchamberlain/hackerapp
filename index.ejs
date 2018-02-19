@@ -17,23 +17,15 @@
 <body layout="column" ng-controller="appController as $ctrl">
     <!-- Container #1 (see wireframe) -->
 
-    <md-toolbar>
-        <div class="md-toolbar-tools">Hacker News App</div>
-
-
-        <span flex></span>
-       <md-content>
+    <md-toolbar md-theme="docs-dark">
+        <div class="md-toolbar-tools">
+            <h3>Hacker News</h3>
+    <span flex></span>
 	    <md-input-container class="md-icon-float md-block">
-            <!-- Use floating label instead of placeholder -->
-            <label md-theme="doc-dark">Search</label>
             <md-icon md-font-icon="search">search</md-icon>
-            <input ng-model="$ctrl.search" type="text">
+            <input ng-model="$ctrl.search" type="text" autofocus>
         </md-input-container>
-		</md-content>
-
-
-
-
+        </div>  
     </md-toolbar>
 
     <!-- Container #2 -->
