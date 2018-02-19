@@ -10,8 +10,8 @@ export default class AppController {
 
     public static $inject: string[] = ['$resource', '$timeout'];
 
-    public search: any = [];
-    public stories: StoryItem[];
+    public search: any = '';
+    public stories: any[];
     public totalStories: number = 0;
     private bestStoryURL: string = 'https://hacker-news.firebaseio.com/v0/beststories.json';
     private itemURL: string = 'https://hacker-news.firebaseio.com/v0/item/:id.json';
@@ -19,7 +19,7 @@ export default class AppController {
     private resource: ng.resource.IResourceClass<StoryItem> = this.$resource<StoryItem>(this.bestStoryURL);
 
     constructor(private $resource: ng.resource.IResourceService, private $timeout: ng.ITimeoutService) {
-        console.log('constructor');
+
 
     }
 
@@ -50,7 +50,7 @@ export default class AppController {
                     });
                 }
             }
-        }, 30);
+        }, 95);
 
     }
 

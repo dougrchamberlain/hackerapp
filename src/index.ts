@@ -15,6 +15,6 @@ export default angular.module('App', [ngResource, ngMaterial, uiRouter])
     .component('storyItem', StoryItem)
     .controller('appController', appController)
     .config(($stateProvider: any) => {
-        console.log($stateProvider);
+        // add more states here.
     })
     .name;

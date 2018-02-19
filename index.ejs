@@ -16,13 +16,20 @@
 
 <body layout="column" ng-controller="appController as $ctrl">
     <!-- Container #1 (see wireframe) -->
-    <md-toolbar layout="row" class="md-toolbar-tools">
-        <h2 md-truncate flex>Hacker News App</h2>
+
+    <md-toolbar>
+        <div class="md-toolbar-tools">Hacker News App</div>
+
+
         <span flex></span>
-        <md-icon md-font-icon="search">search</md-icon>
-        <md-input-container>
-            <input type="text" ng-model="$ctrl.search">
+       <md-content>
+	    <md-input-container class="md-icon-float md-block">
+            <!-- Use floating label instead of placeholder -->
+            <label md-theme="doc-dark">Search</label>
+            <md-icon md-font-icon="search">search</md-icon>
+            <input ng-model="$ctrl.search" type="text">
         </md-input-container>
+		</md-content>
 
 
 
@@ -36,10 +43,10 @@
         <!-- Container #4 -->
         <md-content flex id="content">
             <!-- User details sample -->
-            <md-list ng-repeat="story in $ctrl.stories  | filter:$ctrl.search">
-                <md-list-item>
-                    <story-item story="story"></story-item>
-                </md-list-item>
+            <md-list>
+                <story-item ng-repeat="story in $ctrl.stories | filter:$ctrl.search" story="story">
+
+                </story-item>
             </md-list>
         </md-content>
 

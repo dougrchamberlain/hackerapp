@@ -4,7 +4,7 @@ var webpackConfig = require('./webpack.config');
 
 module.exports = function (config) {
     config.set({
-        //mime: { 'text/x-typescript': ['ts', 'tsx'] }, //for some reasone ts files are interpreted wrong.
+        mime: { 'text/x-typescript': ['ts', 'tsx'] }, //for some reasone ts files are interpreted wrong.
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
         basePath: '',
@@ -53,7 +53,7 @@ module.exports = function (config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['Chrome', 'PhantomJS', 'IE', 'Firefox', 'Edge'],
+        browsers: ['Chrome', 'PhantomJS', 'IE'],
 
 
         // Continuous Integration mode

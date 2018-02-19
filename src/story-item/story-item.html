@@ -3,7 +3,7 @@
         <h3>{{$ctrl.story.title}}</h3>
         <p>{{$ctrl.story.by}}</p>
     </div>
-    <md-content ng-if="!$ctrl.story.title">
-        poop
-    </md-content>
+    <div ng-if="!$ctrl.story.id" layout="row" layout-sm="column" layout-align="space-around">
+        <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+    </div>
 </md-list-item>
