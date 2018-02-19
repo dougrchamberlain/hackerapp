@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "tech test app",
   "repository": {
-    "type":"git",
+    "type": "git",
     "url": "https://github.com/dougrchamberlain/hackerapp.git"
   },
   "main": "src/index.ts",
   "dependencies": {
-    "@uirouter/angularjs": "^1.0.15",
     "angular": "^1.6.9",
     "angular-animate": "^1.6.9",
     "angular-aria": "^1.6.9",
