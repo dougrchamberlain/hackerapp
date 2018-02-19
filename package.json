@@ -55,7 +55,8 @@
   },
   "scripts": {
     "test": "karma start",
-    "start": "webpack-dev-server",
+    "dev": "webpack-dev-server",
+    "start": "node app.js",
     "build": "webpack"
   },
   "author": "doug chamberlain",
