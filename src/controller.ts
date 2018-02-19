@@ -15,6 +15,7 @@ export default class AppController {
     public totalStories: number = 0;
     private bestStoryURL: string = 'https://hacker-news.firebaseio.com/v0/beststories.json';
     private itemURL: string = 'https://hacker-news.firebaseio.com/v0/item/:id.json';
+    private timeout: number = 95;
 
     private resource: ng.resource.IResourceClass<StoryItem> = this.$resource<StoryItem>(this.bestStoryURL);
 
@@ -43,15 +44,17 @@ export default class AppController {
                 this.requestStory(index);
                 const result = JSON.parse(localStorage.getItem(this.stories[index] as any));
                 if (result) {
+                    this.timeout = 0;
                     this.stories[index] = result;
                 } else {
+                    this.timeout = 95;
                     this.$resource<StoryItem>(this.itemURL).get({ id: this.stories[index] }, (story: StoryItem) => {
                         this.stories[index] = story;
                         localStorage.setItem(story.id, JSON.stringify(story));
                     });
                 }
             }
-        }, 95);
+        }, this.timeout);
 
     }
 
