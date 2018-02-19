@@ -2,6 +2,10 @@
   "name": "hacker-app",
   "version": "1.0.0",
   "description": "tech test app",
+  "repository": {
+    "type":"git",
+    "url": "https://github.com/dougrchamberlain/hackerapp.git"
+  },
   "main": "src/index.ts",
   "dependencies": {
     "@uirouter/angularjs": "^1.0.15",
